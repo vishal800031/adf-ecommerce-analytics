@@ -1,0 +1,15 @@
+{
+	"name": "ecome-dev-ingestion",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "44d835f5-fa2a-4aeb-8fae-fa7d6431d121",
+		"tenantId": "8bc8b9e6-6465-42af-b729-41e1193f42bf"
+	}
+}
