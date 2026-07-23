@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "Bhevendra/ML-Datasets/refs/heads/main/retail_data/sales.csv"
+				"relativeUrl": "Bhevendra/ML-Datasets/refs/heads/main/retail_data/sales_orders.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
