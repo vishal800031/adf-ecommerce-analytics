@@ -1,16 +1,24 @@
 {
-	"name": "ds_customers_source",
+	"name": "ds_source_with_parameter",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_github_http",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"relative_path": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "Bhevendra/ML-Datasets/refs/heads/main/retail_data/customers.csv"
+				"relativeUrl": {
+					"value": "@dataset().relative_path",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -18,6 +26,5 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
