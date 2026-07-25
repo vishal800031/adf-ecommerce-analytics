@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "Copy data data github parameter",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy data data github parameter",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -25,7 +25,27 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -33,7 +53,19 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"relative_path": {
-								"value": "@concat('Bhevendra/ML-Datasets/refs/heads/main/retail_data/',pipeline().parameter.file_name)",
+								"value": "@concat('Bhevendra/ML-Datasets/refs/heads/main/retail_data/',pipeline().parameters.file_name)",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_adls_with_parameter",
+						"type": "DatasetReference",
+						"parameters": {
+							"folder_name": {
+								"value": "@concat('retail-data/',pipeline().parameters.folder_name)",
 								"type": "Expression"
 							}
 						}

@@ -1,0 +1,20 @@
+{
+	"name": "da_metadata_for_pipeline",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "files.json",
+				"folderPath": "metadata",
+				"fileSystem": "retail-data"
+			}
+		},
+		"schema": {}
+	}
+}
