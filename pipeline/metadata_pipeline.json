@@ -27,7 +27,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "da_metadata_for_pipeline",
+						"referenceName": "ds_metadata_for_pipeline",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -77,7 +77,8 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
+										"type": "AzureBlobFSWriteSettings",
+										"copyBehavior": "FlattenHierarchy"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
@@ -98,13 +99,25 @@
 							"inputs": [
 								{
 									"referenceName": "ds_source_with_parameter",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"relative_path": {
+											"value": "@concat('Bhevendra/ML-Datasets/refs/heads/main/retail_data/',item().file_name)",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "ds_adls_with_parameter",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"folder_name": {
+											"value": "@concat('retail-data/',item().folder_name)",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
