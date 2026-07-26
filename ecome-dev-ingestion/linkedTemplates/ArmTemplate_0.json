@@ -249,45 +249,11 @@
 						}
 					},
 					"columnDelimiter": ",",
-					"rowDelimiter": "\n",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": [
-					{
-						"name": "clicked_items",
-						"type": "String"
-					},
-					{
-						"name": "customer_id",
-						"type": "String"
-					},
-					{
-						"name": "customer_name",
-						"type": "String"
-					},
-					{
-						"name": "number_of_line_items",
-						"type": "String"
-					},
-					{
-						"name": "order_datetime",
-						"type": "String"
-					},
-					{
-						"name": "order_number",
-						"type": "String"
-					},
-					{
-						"name": "ordered_products",
-						"type": "String"
-					},
-					{
-						"name": "promo_info",
-						"type": "String"
-					}
-				]
+				"schema": []
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_github_http')]"
@@ -967,6 +933,7 @@
 								"value": "@activity('Lookup1').output.value",
 								"type": "Expression"
 							},
+							"isSequential": true,
 							"activities": [
 								{
 									"name": "Copy data1",
@@ -1000,7 +967,7 @@
 											"formatSettings": {
 												"type": "DelimitedTextWriteSettings",
 												"quoteAllText": true,
-												"fileExtension": ".csv"
+												"fileExtension": ".txt"
 											}
 										},
 										"enableStaging": false,
