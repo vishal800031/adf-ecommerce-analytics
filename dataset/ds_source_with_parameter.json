@@ -26,39 +26,6 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "clicked_items",
-				"type": "String"
-			},
-			{
-				"name": "customer_id",
-				"type": "String"
-			},
-			{
-				"name": "customer_name",
-				"type": "String"
-			},
-			{
-				"name": "number_of_line_items",
-				"type": "String"
-			},
-			{
-				"name": "order_datetime",
-				"type": "String"
-			},
-			{
-				"name": "order_number",
-				"type": "String"
-			},
-			{
-				"name": "ordered_products",
-				"type": "String"
-			},
-			{
-				"name": "promo_info",
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }
