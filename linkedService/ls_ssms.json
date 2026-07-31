@@ -1,0 +1,17 @@
+{
+	"name": "ls_ssms",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "ecommerce-analytics.database.windows.net",
+			"database": "ecom_databse",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "vishal_server",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEVFRTgzNTkwLTY3NDQtNEVFMy04OTcxLTM2NjUwQUYzQjhDQl8xNzgyYWVkZi1lODlhLTRjNzctYWE5NS0xMzZmMWFiZDIwYzkiDQp9"
+		}
+	}
+}
